@@ -1,4 +1,4 @@
-const C="trip-5ed77a8b";
+const C="trip-e7d0836e";
 const CORE=["./","./index.html","./manifest.webmanifest","./icon-180.png","./icon-512.png"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(CORE)));self.skipWaiting();});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
